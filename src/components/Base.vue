@@ -3,15 +3,20 @@
 </template>
 
 <script setup lang="ts">
-import {currentBaseCol} from "../stores/beverage";
-import {ref} from 'vue'
-const col = '#DAA520'
+import { ref } from 'vue';
+import { BaseBeverageType } from '../stores/beverage';
+
+type Props = {
+  base_Color: BaseBeverageType;
+};
+const props = defineProps<Props>();
+const coLor = ref(props.base_Color.color)
 </script>
 
 
 <style scoped>
 .baseBeverage {
-  background-color: v-bind(col);
+  background-color: v-bind(coLor);
   position: relative;
   width: 100%;
   height: 100%;

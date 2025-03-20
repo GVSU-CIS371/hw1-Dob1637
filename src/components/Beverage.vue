@@ -10,7 +10,7 @@
         <Syrup />
       </template>
       <template v-slot:bottom>
-        <Base />
+        <Base v-bind:base_Color="baseCol"/>
       </template>
     </Contents>
   </Mug>
@@ -23,9 +23,13 @@ import Base from "./Base.vue";
 import Creamer from "./Creamer.vue";
 import Hot from "./Hot.vue";
 import Cold from "./Cold.vue";
+import { BaseBeverageType } from "../stores/beverage";
 
 type Props = {
   isIced: boolean;
+  baseCol: BaseBeverageType;
+  syrCol: string;
+  creCol: string;
 };
 defineProps<Props>();
 </script>
