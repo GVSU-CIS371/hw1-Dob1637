@@ -2,10 +2,16 @@
   <div class="baseBeverage"></div>
 </template>
 
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import {currentBaseCol} from "../stores/beverage";
+import {ref} from 'vue'
+const col = '#DAA520'
+</script>
+
 
 <style scoped>
 .baseBeverage {
+  background-color: v-bind(col);
   position: relative;
   width: 100%;
   height: 100%;
